@@ -1,0 +1,13 @@
+TODO
+lib/Colloquy/Bot/Simple.pm
+t/00compile.t
+t/02pod_coverage.t
+t/01pod.t
+README
+Changes
+MANIFEST
+INSTALL
+Makefile.PL
+LICENSE
+NOTICE
+META.yml
