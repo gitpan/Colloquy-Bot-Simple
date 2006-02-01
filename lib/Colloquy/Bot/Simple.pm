@@ -1,6 +1,6 @@
 ############################################################
 #
-#   $Id: Simple.pm,v 1.3 2006/01/01 23:12:28 nicolaw Exp $
+#   $Id: Simple.pm,v 1.4 2006/02/01 23:12:28 nicolaw Exp $
 #   Colloquy::Bot::Simple - Simple robot interface for Colloquy
 #
 #   Copyright 2006 Nicola Worthington
@@ -31,7 +31,7 @@ use vars qw(@EXPORT @EXPORT_OK $VERSION);
 @EXPORT = qw(&connect_through_firewall &connect_directly &daemonize);
 @EXPORT_OK = qw(TB_TRACE TB_LOG);
 
-$VERSION = sprintf('%d.%02d', q$Revision: 1.3 $ =~ /(\d+)/g);
+$VERSION = sprintf('%d.%02d', q$Revision: 1.4 $ =~ /(\d+)/g);
 
 sub TB_LOG { Chatbot::TalkerBot::TB_TRACE(@_); }
 sub TB_TRACE { Chatbot::TalkerBot::TB_TRACE(@_); }
@@ -83,7 +83,7 @@ sub listenLoop {
 						list => $list,
 						msgtype => $msgtype,
 						raw => $_,
-						args => \@args,
+						args => [ ($command,@args) ],
 					);
 		}
 		
@@ -125,7 +125,7 @@ sub new {
 			PasswordResponse => '',
 			LoginSuccess => 'MARK ---',
 			LoginFail => 'Incorrect login',
-			NoCommands => 1,
+			#NoCommands => 1,
 		});
 
 	return $talker;
@@ -285,7 +285,7 @@ Colloquy::Bot::Simple - Simple robot interface for Colloquy
 
 =head1 DESCRIPTION
 
-A very simple robot interface to connect and interect with a Colloquy talker,
+A very simple robot interface to connect and interact with a Colloquy talker,
 based upon Chatbot::TalkerBot.
 
 =head1 METHODS
@@ -312,7 +312,7 @@ L<Chatbot::TalkerBot>
 
 =head1 VERSION
 
-$Id: Simple.pm,v 1.3 2006/01/01 23:12:28 nicolaw Exp $
+$Id: Simple.pm,v 1.4 2006/02/01 23:12:28 nicolaw Exp $
 
 =head1 AUTHOR
 
