@@ -1,4 +1,4 @@
-# $Id: 00compile.t,v 1.1 2006/01/01 23:09:55 nicolaw Exp $
+# $Id: 00compile.t 516 2006-05-29 11:22:09Z nicolaw $
 
 chdir('t') if -d 't';
 use lib qw(./lib ../lib);
